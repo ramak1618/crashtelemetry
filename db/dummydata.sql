@@ -2,19 +2,19 @@
 -- This is just for an example state of the server, to showcase query commands.
 
 -- 12 servers
-INSERT INTO Server (server_id, arch, cores) VALUES
-(1,  'x86_64',  16),
-(2,  'x86_64',  32),
-(3,  'x86_64',  8),
-(4,  'aarch64', 64),
-(5,  'aarch64', 16),
-(6,  'x86_64',  4),
-(7,  'x86_64',  48),
-(8,  'aarch64', 8),
-(9,  'x86_64',  24),
-(10, 'riscv64', 4),
-(11, 'x86_64',  12),
-(12, 'aarch64', 32);
+INSERT INTO Server (server_id, cores) VALUES
+(1, 16),
+(2, 32),
+(3, 8),
+(4, 64),
+(5, 16),
+(6, 4),
+(7, 48),
+(8, 8),
+(9, 24),
+(10, 4),
+(11, 12),
+(12, 32);
 
 -- 11 programs (6 service daemons, 5 user-initiated applications)
 INSERT INTO Program (program_id, program_name, program_type) VALUES
