@@ -1,0 +1,11 @@
+DELIMITER //
+
+CREATE FUNCTION num_servers_crashed(progid INT)
+RETURNS INT DETERMINISTIC
+BEGIN
+    DECLARE r INT;
+    SELECT COUNT(DISTINCT server_id) INTO r FROM Crash WHERE program_id = progid;
+    RETURN r;
+END //
+
+DELIMITER ;
