@@ -1,6 +1,5 @@
 CREATE TABLE Server(
     server_id INT NOT NULL, 
-    arch VARCHAR(32) NOT NULL, 
     cores INT NOT NULL, 
     PRIMARY KEY (server_id)
 );
