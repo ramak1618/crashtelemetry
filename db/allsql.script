@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS lemetry;
+USE lemetry;
+
+source db/schema.sql;
+source db/dummydata.sql;
+source db/triggers.sql;
+source db/procedures.sql;
+source db/functions.sql;
+source db/users.sql;
