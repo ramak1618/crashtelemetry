@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS crashtelemetry;
+-- pls run schema.sql, procedures.sql and functions.sql before this.
 
 CREATE USER 'daemon'@'localhost' IDENTIFIED BY 'daem';
 CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';
@@ -11,6 +11,9 @@ GRANT SELECT, INSERT, UPDATE ON crashtelemetry.* TO 'dev'@'localhost';
 GRANT DELETE ON crashtelemetry.Server TO 'dev'@'localhost';
 GRANT DELETE ON crashtelemetry.Program TO 'dev'@'localhost';
 GRANT DELETE ON crashtelemetry.ServerProgram TO 'dev'@'localhost';
+
+GRANT EXECUTE ON PROCEDURE crashtelemetry.num_crashes TO 'dev'@'localhost';
+GRANT EXECUTE ON FUNCTION crashtelemetry.num_servers_crashed TO 'dev'@'localhost';
 
 -- crash daemon only needs to insert crash and possibly do regress resolved fingerprints.
 GRANT INSERT ON crashtelemetry.Crash TO 'daemon'@'localhost';
